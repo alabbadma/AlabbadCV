@@ -182,7 +182,19 @@
     .side-card .section-title{margin-bottom:6px}
     .social-links{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
     .social-icon{width:39px;height:39px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:var(--primary);background:rgba(255,255,255,.78);border:1px solid var(--border);box-shadow:var(--shadow2);transition:.22s;font-size:16px}
-    .social-icon:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
+    .social-icon.email{color:#ea4335}
+    .social-icon.whatsapp{color:#25d366}
+    .social-icon.call{color:#1677b9}
+    .social-icon.youtube{color:#ff0000}
+    .social-icon.snapchat{color:#ffcc00}
+    .social-icon.x-twitter{color:#111111}
+    .social-icon:hover{background:#fff;color:inherit;transform:translateY(-3px);box-shadow:0 12px 24px rgba(0,0,0,.14)}
+    .social-icon.email:hover{background:#ea4335;color:#fff}
+    .social-icon.whatsapp:hover{background:#25d366;color:#fff}
+    .social-icon.call:hover{background:#1677b9;color:#fff}
+    .social-icon.youtube:hover{background:#ff0000;color:#fff}
+    .social-icon.snapchat:hover{background:#ffcc00;color:#111}
+    .social-icon.x-twitter:hover{background:#111;color:#fff}
     .logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
     .logo-card{min-height:75px;border-radius:15px;background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.56);box-shadow:0 7px 17px rgba(0,0,0,.045);display:flex;align-items:center;justify-content:center;padding:10px;transition:.2s}
     .logo-card:hover{transform:translateY(-3px);background:#fff;box-shadow:0 13px 28px rgba(0,0,0,.11)}
@@ -249,20 +261,74 @@
       .intro{grid-template-columns:1fr 150px}
     }
     @media(max-width:640px){
-      body{font-size:13px}
-      .top-status{min-height:82px}
-      .date-stack{position:relative;inset:auto;justify-content:center;margin-bottom:8px}
-      .visitor-pill{position:relative;left:auto;top:auto;transform:none;display:flex;width:max-content;margin:0 auto}
-      .toolbar-inner{justify-content:center}
-      .theme-dots,.tool-actions{width:100%;justify-content:center}
-      .page{width:min(100% - 20px,1180px)}
-      .intro{grid-template-columns:1fr;padding:20px;min-height:auto;text-align:center}
-      .photo-wrap{order:-1;min-height:250px}
-      .profile-img{width:170px;max-height:250px}
-      .meta,.social-links{justify-content:center}
-      .main-title{font-size:22px}
+      body{font-size:12.5px;line-height:1.52}
+      .top-status{min-height:42px;width:min(100% - 18px,1180px);margin-top:8px}
+      .status-pill{padding:5px 8px;border-radius:10px}
+      .date-stack{
+        position:relative;
+        inset:auto;
+        width:max-content;
+        max-width:100%;
+        grid-template-columns:auto auto;
+        column-gap:7px;
+        margin-inline-start:0;
+        margin-inline-end:auto;
+      }
+      body.en .date-stack{margin-inline-start:0;margin-inline-end:auto}
+      .date-stack .date-value{min-width:142px;font-size:10.5px}
+      .date-stack .date-label{font-size:10.5px}
+      .toolbar{padding:8px 10px 6px}
+      .toolbar-inner{justify-content:center;gap:7px}
+      .theme-dots,.tool-actions{width:100%;justify-content:center;padding:6px;gap:7px}
+      .theme-dot{width:23px;height:23px}
+      .tool-btn{min-height:31px;padding:6px 10px;font-size:10.8px;border-radius:10px}
+      .page{width:min(100% - 16px,1180px);margin-top:10px}
+      .hero-grid{gap:10px}
+      .intro{
+        grid-template-columns:1fr 118px;
+        padding:14px;
+        min-height:238px;
+        text-align:initial;
+        gap:10px;
+        align-items:center;
+      }
+      body.en .intro{grid-template-columns:1fr 118px}
+      .intro::before{opacity:.055}
+      .eyebrow{font-size:9.5px;padding:5px 8px}
+      .main-title{font-size:18px;line-height:1.35;margin:8px 0 2px}
+      body.en .main-title{font-size:17px}
+      .subtitle{font-size:12px;margin-bottom:6px}
+      .summary{font-size:11px;line-height:1.55}
+      .meta{gap:5px;margin-top:9px}
+      .pill{font-size:10.5px;padding:5px 7px;border-radius:9px}
+      .photo-wrap{order:0;min-height:210px;align-self:end}
+      .photo-orbit{width:112px;bottom:16px}
+      .profile-img{width:118px;max-height:205px}
+      .side-card{min-height:auto;padding:14px;gap:10px}
+      .social-links{justify-content:center;gap:8px}
+      .social-icon{width:34px;height:34px;font-size:14px}
+      .cards{gap:10px;margin-top:10px}
+      .card{height:245px}
+      .card.short{height:205px}
+      .card.tall{height:265px}
+      .card.full{height:250px}
+      .section-title{font-size:12.2px;padding:10px 12px;gap:8px}
+      .icon{width:28px;height:28px;border-radius:10px;font-size:12px}
+      .scroll-body{padding:10px 12px}
+      .item,.link-pill,.timeline-item{font-size:11.2px;line-height:1.42;padding:7px 9px;border-radius:12px}
       .link-grid,.list.two{grid-template-columns:1fr}
-      .logos{grid-template-columns:repeat(2,1fr)}
+      .logos{grid-template-columns:repeat(2,1fr);gap:8px}
+      .logo-card{min-height:64px;padding:8px;border-radius:13px}
+      .logo-card img{max-height:45px}
+      .footer{margin-top:10px;padding:12px;border-radius:16px}
+    }
+
+    @media(max-width:390px){
+      .intro{grid-template-columns:1fr;text-align:center}
+      .photo-wrap{order:-1;min-height:205px}
+      .meta{justify-content:center}
+      .main-title{font-size:17px}
+      .summary{font-size:10.8px}
     }
 
     .print-note{
@@ -357,11 +423,7 @@
       <span class="date-label" data-i18n="gregLabel">الميلادي</span>
       <span class="date-value" id="gregDate">—</span>
     </div>
-    <div class="status-pill visitor-pill">
-      <i class="fa-solid fa-eye"></i>
-      <span data-i18n="visitors">عدد الزوار:</span>
-      <span id="visNum">—</span>
-    </div>
+
   </div>
 
   <header class="toolbar">
@@ -401,12 +463,12 @@
       <article class="panel side-card">
         <h2 class="section-title"><span class="icon"><i class="fa-solid fa-address-card"></i></span><span data-i18n="contactHdr">التعريف والتواصل</span></h2>
         <div class="social-links" aria-label="روابط التواصل">
-          <a class="social-icon" href="mailto:ALABBADMA.TV@GMAIL.COM?subject=%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a class="social-icon" href="https://wa.me/966563660366?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A7%D8%B7%D9%84%D8%B9%D8%AA%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a class="social-icon" href="tel:+966563660366" title="Call" aria-label="Call"><i class="fa-solid fa-headset"></i></a>
-          <a class="social-icon" href="https://www.youtube.com/@ALABBADTV/videos" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a class="social-icon" href="https://snapchat.com/t/GmAYX0OI" target="_blank" rel="noopener" title="Snapchat" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
-          <a class="social-icon" href="https://x.com/ALABBAD_MA" target="_blank" rel="noopener" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a class="social-icon email" href="mailto:ALABBADMA.TV@GMAIL.COM?subject=%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a class="social-icon whatsapp" href="https://wa.me/966563660366?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A7%D8%B7%D9%84%D8%B9%D8%AA%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="social-icon call" href="tel:+966563660366" title="Call" aria-label="Call"><i class="fa-solid fa-headset"></i></a>
+          <a class="social-icon youtube" href="https://www.youtube.com/@ALABBADTV/videos" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a class="social-icon snapchat" href="https://snapchat.com/t/GmAYX0OI" target="_blank" rel="noopener" title="Snapchat" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+          <a class="social-icon x-twitter" href="https://x.com/ALABBAD_MA" target="_blank" rel="noopener" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
 
         <h2 class="section-title"><span class="icon"><i class="fa-solid fa-certificate"></i></span><span data-i18n="accreditHdr">معتمد من</span></h2>
@@ -521,7 +583,7 @@
       ar:{
         htmlLang:"ar",dir:"rtl",download:"تحميل PDF",hijriLabel:"الهجري",gregLabel:"الميلادي",eyebrow:"سيرة ذاتية تفاعلية",name:"أ. محمد بن عبدالعزيز العباد",role:"مذيع ومدرب إعلامي سعودي",
         summary:"إعلامي ومدرب سعودي يمتلك خبرة متنوعة في الإعلام المرئي والمسموع، وإعداد وتقديم البرامج، والتدريب الإعلامي والإداري، مع حضور مهني في عدد من المنصات والبرامج والفعاليات.",
-        location:"الأحساء – المملكة العربية السعودية",contactHdr:"التعريف والتواصل",visitors:"عدد الزوار:",personalHdr:"المعلومات الشخصية",birthLabel:"الميلاد:",birth:"1977م – الأحساء",nationalityLabel:"الجنسية:",nationality:"سعودي",languagesLabel:"اللغات:",languages:"العربية والإنجليزية تحدثًا وكتابة",
+        location:"الأحساء – المملكة العربية السعودية",contactHdr:"التعريف والتواصل",personalHdr:"المعلومات الشخصية",birthLabel:"الميلاد:",birth:"1977م – الأحساء",nationalityLabel:"الجنسية:",nationality:"سعودي",languagesLabel:"اللغات:",languages:"العربية والإنجليزية تحدثًا وكتابة",
         expHdr:"الخبرات الوظيفية",exp:[["مستشفى الأحساء","2000م إلى 2001م"],["الإدارة العامة للتعليم بالأحساء","2001م حتى الآن"]],
         eduHdr:"المؤهلات العلمية",edu:["ماجستير إعلام مرئي ومسموع — جامعة الملك فيصل — بتقدير ممتاز مع مرتبة الشرف","بكالوريوس لغة إنجليزية — جامعة الملك فيصل — مع مرتبة الشرف"],
         accreditHdr:"معتمد من",mediaHdr:"الظهور والحراك الإعلامي",
@@ -537,7 +599,7 @@
       en:{
         htmlLang:"en",dir:"ltr",download:"Download PDF",hijriLabel:"Hijri",gregLabel:"Gregorian",eyebrow:"Interactive CV",name:"A. Mohammed bin Abdulaziz Alabbad",role:"Saudi TV Presenter & Media Trainer",
         summary:"A Saudi media professional and trainer with diverse experience in audiovisual media, program production and presentation, media and administrative training, and professional presence across platforms, programs, and events.",
-        location:"Al-Ahsa – Kingdom of Saudi Arabia",contactHdr:"Profile & Contact",visitors:"Visitors:",personalHdr:"Personal Information",birthLabel:"Born:",birth:"1977 – Al-Ahsa",nationalityLabel:"Nationality:",nationality:"Saudi",languagesLabel:"Languages:",languages:"Arabic and English, spoken and written",
+        location:"Al-Ahsa – Kingdom of Saudi Arabia",contactHdr:"Profile & Contact",personalHdr:"Personal Information",birthLabel:"Born:",birth:"1977 – Al-Ahsa",nationalityLabel:"Nationality:",nationality:"Saudi",languagesLabel:"Languages:",languages:"Arabic and English, spoken and written",
         expHdr:"Work Experience",exp:[["Al-Ahsa Hospital","2000 to 2001"],["Al-Ahsa Education Directorate","2001 to Present"]],
         eduHdr:"Education",edu:["Master of Audiovisual Media — King Faisal University — Excellent with Honors","B.A. in English — King Faisal University — Honors"],
         accreditHdr:"Accredited by",mediaHdr:"Media Presence & Activities",
@@ -579,7 +641,6 @@
         footerNameEl.innerHTML = lang==="en" ? 'A. Mohammed A. Alabbad — <bdi>0563660366</bdi>' : 'أ. محمد بن عبدالعزيز العباد — <bdi>0563660366</bdi>';
       }
       renderDates();renderDynamic(lang);
-      if(window._visCount!=null)document.getElementById("visNum").textContent=formatNumber(window._visCount);
       localStorage.setItem("cv-lang",lang);
     }
     function makeItem(t){const d=document.createElement("div");d.className="item";d.textContent=t;return d}
@@ -612,11 +673,6 @@
     document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.hidden=true});
     window.addEventListener("afterprint",()=>document.body.classList.remove("print-compact"));
     renderLogos();setTheme(localStorage.getItem("cv-theme")||"default");setLang(localStorage.getItem("cv-lang")||"ar");
-    document.addEventListener("DOMContentLoaded",function(){
-      if(typeof google!=="undefined"&&google.script&&google.script.run){
-        google.script.run.withSuccessHandler(function(n){window._visCount=n;document.getElementById("visNum").textContent=formatNumber(n)}).getAndIncrementCounter();
-      }
-    });
   </script>
 </body>
 </html>
